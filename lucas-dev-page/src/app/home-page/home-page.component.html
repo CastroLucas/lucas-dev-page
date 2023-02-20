@@ -1,10 +1,27 @@
-<p>home-page works!</p>
-
-<div class="containerzinho">
-  <select>
-    <option value="">0</option>
-    <option value="">1</option>
-    <option value="">2</option>
-    <option value="">3</option>
-  </select>
-</div>
+<ng-container class="">
+  <div class="containerzinho">
+    <div>
+      <select #classe (change)="0">
+        <option value="alert-primary">{{'primary'}}</option>
+        <option value="alert-secondary">{{'secondary'}}</option>
+        <option value="alert-success">{{'success'}}</option>
+        <option value="alert-danger">{{'danger'}}</option>
+        <option value="alert-warning">{{'warning'}}</option>
+        <option value="alert-info">{{'info'}}</option>
+        <option value="alert-light">{{'light'}}</option>
+        <option value="alert-dark">{{'dark'}}</option>
+      </select>
+    </div>
+    <br>
+    <div class="alert {{classe.value}}" role="alert">texto colorido conforme valor do combobox</div>
+    <br>
+    <div class="alert" role="alert" [class.alert-primary]="classe.value == 'alert-primary'">primary</div>
+    <div class="alert" role="alert" [class.alert-secondary]="classe.value == 'alert-secondary'">secondary</div>
+    <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">success</div>
+    <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">danger</div>
+    <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">warning</div>
+    <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">info</div>
+    <div class="alert" role="alert" [class.alert-light]="classe.value == 'alert-light'">light</div>
+    <div class="alert" role="alert" [class.alert-dark]="classe.value == 'alert-dark'">dark</div>
+  </div>
+</ng-container>
